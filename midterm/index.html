@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A short introduction to the life and facts of the lone starfish.">
+    <title>Lone Starfish</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="page-shell">
+        <!-- The banner image and title introduce the page. -->
+        <header class="hero" id="home">
+            <img src="images/lone-starfish-wide.jpg" alt="A lone starfish on a pale turquoise shore">
+            <h1>Lone Starfish</h1>
+        </header>
+
+        <!-- Page navigation points to the main sections below. -->
+        <nav class="site-nav" aria-label="Main navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#story">Story</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <!-- The floated figure lets the story text flow around the photograph. -->
+            <article class="story section" id="story">
+                <h2>Life of a Starfish</h2>
+                <figure class="story-photo">
+                    <img src="images/lone-starfish.jpg" alt="Close-up of an orange starfish against turquoise sand">
+                </figure>
+                <p>Swallower catla Black angelfish grunter striped bass scissor-tail rasbora; slender mola. Snapper catalufa silver driftfish, kaluga lungfish boga greeneye, “french angelfish peamouth halfbeak batfish Australian prowfish mouthbrooder.” Gibberfish tui chub mooneye smoothtongue; amur pike barbeled houndshark dwarf loach beachsalmon archerfish longfin fingerfish, thornfish: plownose chimaera gurnard. Dragon goby long-finned char bluntnose knifefish aruana eelpout elasmobranch snipefish; rock bass sea devil trunkfish. Australian herring barbel Mexican golden trout, killifish bonito; northern anchovy. Waryfish, “lionfish; longfin smelt; leopard danio dragonfish,” Lost River sucker, mojarra. Modoc sucker northern clingfish mudsucker x-ray tetra squaretail jackfish. Paradise fish cuchia Redhorse sucker ayu Ganges shark rockling flyingfish pearleye mahi-mahi yellow weaver: ghost pipefish ide armoured catfish halibut. Torpedo; leopard danio minnow leatherjacket hardhead catfish wobbegong trench squeaker crestfish, halibut glowlight danio sailback scorpionfish unicorn fish. Tadpole cod ricefish Shingle Fish emperor drum yellow-edged moray velvet catfish flabby whalefish. Featherfin knifefish plaice pike eel tarwhine Black triggerfish pearl danio cownose ray. Merluccid hake, platy peamouth humuhumunukunukuapua'a barred danio. Black dragonfish, stingray lightfish Australian lungfish searobin false trevally, dottyback.</p>
+            </article>
+
+            <!-- A semantic list presents each supplied fact as its own item. -->
+            <section class="facts section" aria-labelledby="facts-title">
+                <h2 id="facts-title">Facts About Starfish</h2>
+                <ul>
+                    <li>Australian herring barbel Mexican golden trout, killifish bonito; northern anchovy.</li>
+                    <li>Waryfish, “lionfish; longfin smelt; leopard danio dragonfish,” Lost River sucker, mojarra.</li>
+                    <li>Herring barbel Mexican golden trout, killifish bonito; northern anchovy.</li>
+                    <li>Waryfish, “lionfish; longfin smelt; leopard danio dragonfish,” Lost River sucker, mojarra.</li>
+                </ul>
+            </section>
+
+            <!-- Each field label is explicitly associated with its control. -->
+            <section class="contact section" id="contact" aria-labelledby="contact-title">
+                <h2 id="contact-title">Contact to Learn More</h2>
+                <form action="#contact" method="get">
+                    <div class="form-field">
+                        <label for="full-name">Your name</label>
+                        <input id="full-name" name="full-name" type="text" autocomplete="name" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="email-address">Your email</label>
+                        <input id="email-address" name="email-address" type="email" autocomplete="email" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="message">Your message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- A small footer closes the page. -->
+        <footer class="site-footer">
+            <p>© 2026 Lone Starfish</p>
+        </footer>
+    </div>
+</body>
+</html>

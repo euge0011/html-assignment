@@ -1,0 +1,241 @@
+/* Set the page palette and a consistent box model. */
+:root {
+    color-scheme: light;
+    --seafoam: #aad4cf;
+    --ink: #202b2a;
+    --muted-ink: #4e5d5b;
+    --line: #d6e2df;
+    --paper: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--seafoam);
+    color: var(--ink);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Keep the simple single-column layout close to the provided asset proportions. */
+.page-shell {
+    width: min(100%, 1024px);
+    min-height: 100vh;
+    margin: 0 auto;
+    background: var(--paper);
+    box-shadow: 0 0 24px rgb(30 54 50 / 12%);
+}
+
+/* Use the image element for the banner and layer the title above it. */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: #82b8b1;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hero h1 {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: center;
+    text-shadow: 0 2px 8px rgb(0 0 0 / 70%);
+}
+
+/* Divide the three navigation links evenly across the page. */
+.site-nav {
+    border-bottom: 1px solid var(--line);
+}
+
+.site-nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-nav li + li {
+    border-left: 1px solid var(--line);
+}
+
+.site-nav a {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: var(--ink);
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+    background: var(--seafoam);
+    color: #102b28;
+}
+
+/* Give the article, facts, and form the same roomy inner margins. */
+.section {
+    padding: 1.5rem 2rem;
+}
+
+.section h2 {
+    margin: 0 0 0.8rem;
+    font-size: 1.65rem;
+    line-height: 1.25;
+}
+
+.story::after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+.story p {
+    margin: 0;
+}
+
+.story-photo {
+    float: right;
+    width: min(35%, 300px);
+    margin: 0.15rem 0 1rem 1.5rem;
+}
+
+.story-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.facts {
+    border-top: 1px solid var(--line);
+}
+
+.facts ul {
+    margin: 0;
+    padding-left: 1.4rem;
+}
+
+.facts li {
+    padding: 0.2rem 0;
+}
+
+.facts li::marker {
+    color: #347a72;
+}
+
+.contact {
+    border-top: 1px solid var(--line);
+    background: #f5faf9;
+}
+
+.contact form {
+    display: grid;
+    gap: 1rem;
+}
+
+.form-field {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.form-field label {
+    font-weight: 700;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 0.7rem 0.75rem;
+    border: 1px solid #839b97;
+    border-radius: 2px;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+}
+
+.form-field textarea {
+    resize: vertical;
+}
+
+.form-field input:focus-visible,
+.form-field textarea:focus-visible,
+.contact button:focus-visible {
+    outline: 3px solid #347a72;
+    outline-offset: 2px;
+}
+
+.contact button {
+    justify-self: start;
+    min-width: 7rem;
+    padding: 0.65rem 1rem;
+    border: 1px solid #245c56;
+    border-radius: 2px;
+    background: #347a72;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background: #245c56;
+}
+
+/* Keep the footer quiet and clearly separated from the page content. */
+.site-footer {
+    padding: 1rem 2rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted-ink);
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* Let the article image use the full line on narrow screens. */
+@media (max-width: 560px) {
+    .section {
+        padding: 1.25rem 1rem;
+    }
+
+    .story-photo {
+        float: none;
+        width: min(100%, 360px);
+        margin: 0 0 1rem;
+    }
+
+    .site-footer {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
